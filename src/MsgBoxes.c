@@ -1,10 +1,14 @@
+//File containing custom message boxes reladed code
+
+//Standard includes
 #include <windows.h>
 #include <stddef.h>
 #include <stdio.h>
 
+//custom includes
 #include "..\include\MsgBoxes.h"
 
-void InfoBox(char *FormatText, char *Var)
+void InfoBox(char* FormatText, char* Var)
 {
 	char *DisplayPrompt;
 	size_t DisplayPromptLen = strlen(FormatText) + strlen(Var) + 1;
@@ -13,13 +17,13 @@ void InfoBox(char *FormatText, char *Var)
 
 	if(DisplayPrompt != NULL && snprintf(DisplayPrompt, DisplayPromptLen * sizeof(DisplayPrompt), FormatText, Var) > 0)
 	{
-		MessageBox(NULL, DisplayPrompt, "Informacion", MB_ICONINFORMATION | MB_OK | MB_TOPMOST);
+		MessageBox(NULL, DisplayPrompt, "Information", MB_ICONINFORMATION | MB_OK | MB_TOPMOST);
 	}
 
 	free(DisplayPrompt);
 
 }
-void ErrorBox(char *FormatText, char *Var)
+void ErrorBox(char* FormatText, char * Var)
 {
 	char *DisplayPrompt;
 	size_t DisplayPromptLen = strlen(FormatText) + strlen(Var) + 1;
@@ -34,7 +38,7 @@ void ErrorBox(char *FormatText, char *Var)
 	free(DisplayPrompt);
 
 }
-void NumBox(char *FormatText, int Var)
+void NumBox(char* FormatText, int Var)
 {
 	char *DisplayPrompt;
 	size_t DisplayPromptLen = strlen(FormatText) + sizeof(Var) + 1;
@@ -43,7 +47,7 @@ void NumBox(char *FormatText, int Var)
 
 	if(DisplayPrompt != NULL && snprintf(DisplayPrompt, DisplayPromptLen * sizeof(DisplayPrompt), FormatText, Var) > 0)
 	{
-		MessageBox(NULL, DisplayPrompt, "Informacion", MB_ICONINFORMATION | MB_OK | MB_TOPMOST);
+		MessageBox(NULL, DisplayPrompt, "Information", MB_ICONINFORMATION | MB_OK | MB_TOPMOST);
 	}
 
 	free(DisplayPrompt);

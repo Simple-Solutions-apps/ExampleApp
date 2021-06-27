@@ -1,11 +1,8 @@
 //File containing contol reladed definitions and function prototypes
 
-//Standard includes
-#include <windows.h>
-
 //conditional header guard wrapper to avoid proccesing more than once
 #ifndef CONTROLLS_H
-#define CONTROLLS_H
+	#define CONTROLLS_H
 
 	//Controls
 	#define IDC_TOOLBAR_PRESS 3201

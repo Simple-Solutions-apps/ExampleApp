@@ -2,7 +2,7 @@
 
 //conditional header guard wrapper to avoid proccesing more than once
 #ifndef RESOURCES_H
-#define RESOURCES_H
+	#define RESOURCES_H
 
 	//icons
 	#define IDI_APPICON 100

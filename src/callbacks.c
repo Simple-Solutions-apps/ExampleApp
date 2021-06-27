@@ -8,12 +8,9 @@
 //custom includes
 #include "..\include\resource.h"
 #include "..\include\controls.h"
-
-//callback procedures
 #include "..\include\callbacks.h"
 
 //globals
-
 HWND ghDlgToolbar;
 HWND ghDlgLogIn;
 HGLOBAL ghSelectedlist;
@@ -255,6 +252,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 									sOpenFileName.nMaxFile = MAX_PATH;
 									//For opening a file
 									//ofn.Flags = OFN_EXPLORER | OFN_FILEMUSTEXIST | OFN_HIDEREADONLY;
+									
 									//For saving a file
 									sOpenFileName.Flags = OFN_EXPLORER | OFN_PATHMUSTEXIST | OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT; 
 									sOpenFileName.lpstrDefExt = "txt";

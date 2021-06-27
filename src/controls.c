@@ -1,43 +1,7 @@
 //File containing contol reladed code
 
 /*	https://docs.microsoft.com/en-us/windows/win32/winmsg/about-window-classes#application-global-classes
-https://docs.microsoft.com/en-us/windows/win32/controls/individual-control-info
-Class		Description
-Button		The class for a button.
-ComboBox	The class for a combo box.
-https://docs.microsoft.com/en-us/windows/win32/controls/edit-control-styles
-Edit		The class for an edit control.
-ListBox		The class for a list box.
-MDIClient	The class for an MDI client window.
-ScrollBar	The class for a scroll bar.
-Static		The class for a static control.
-
-https://docs.microsoft.com/en-us/windows/win32/controls/individual-control-info
-
-STATIC
-EDIT
-ICON
-BUTTON
-SCROLLBAR
-CHECKBOX
-RICHEDIT
-GROUPBOX
-MEMO
-BITMAP
-COMBOBOX
-LISTBOX
-RADIOBUTTON
-SysTreeView32
-SysListView32
-SysMonthCal32
-SysAnimate32
-SysDateTimePick32
-SysTabControl32
-msctls_trackbar32
-msctls_statusbar32
-msctls_progress32
-msctls_updown32
-msctls_hotkey32
+	https://docs.microsoft.com/en-us/windows/win32/controls/individual-control-info
 */
 
 //standard includes
@@ -67,11 +31,6 @@ HIMAGELIST hImageList;
 
 void CreateControls(HWND hwnd)
 {
-	/*if(InitCommonControls(ICC_ANIMATE_CLASS | ICC_BAR_CLASSES | ICC_COOL_CLASSES | ICC_DATE_CLASSES | ICC_INTERNET_CLASSES | ICC_LINK_CLASS | ICC_LISTVIEW_CLASSES | ICC_NATIVEFNTCTL_CLASS | ICC_PAGESCROLLER_CLASS | ICC_PROGRESS_CLASS | ICC_TAB_CLASSES | ICC_TREEVIEW_CLASSES | ICC_UPDOWN_CLASS | ICC_USEREX_CLASSES))
-	{
-		MessageBox(hwnd, "Common controls initiated", "Controls set up", MB_OK | MB_ICONINFORMATION);
-	}*/
-
 	hDefaultFont = GetStockObject(DEFAULT_GUI_FONT);
 
 	//creating label 1
@@ -164,7 +123,8 @@ void CreateControls(HWND hwnd)
 
 	GetClientRect(hwnd, &rcClient);
 
-	nParts = 2; //2 parts for the status bar
+	 //2 parts for the status bar
+	nParts = 2;
 
 	// Allocate an array for storing the right edge coordinates of each part.
     hloc = LocalAlloc(LHND, sizeof(int) * nParts);
@@ -240,5 +200,4 @@ void CreateControls(HWND hwnd)
 	SendMessage(hToolBar, TB_AUTOSIZE, 0, 0);
 	//show buttons
 	ShowWindow(hToolBar, TRUE);
-
 }
