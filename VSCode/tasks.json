@@ -1,0 +1,63 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build with make",
+			"type": "shell",
+			"windows": {
+			"command": "make.exe"
+			},
+			"args": ["build"],
+			"options":{"cwd": "${fileWorkspaceFolder}"},
+			"group": "build",
+			"presentation": {
+			"reveal": "always",
+			"panel": "new"
+			}
+		},
+		{
+			"label": "Rebuild with make",
+			"type": "shell",
+			"windows": {
+			"command": "make.exe"
+			},
+			"args": ["rebuild"],
+			"options":{"cwd": "${fileWorkspaceFolder}"},
+			"group": "build",
+			"presentation": {
+			"reveal": "always",
+			"panel": "new"
+			}
+		},
+		{
+			"label": "Clean with make",
+			"type": "shell",
+			"windows": {
+			"command": "make.exe"
+			},
+			"args": ["clean"],
+			"options":{"cwd": "${fileWorkspaceFolder}"},
+			"group": "build",
+			"presentation": {
+			"reveal": "always",
+			"panel": "new"
+			}
+		},
+		{
+			"label": "Commit with make",
+			"type": "shell",
+			"windows": {
+			"command": "make.exe"
+			},
+			"args": ["commit"],
+			"options":{"cwd": "${fileWorkspaceFolder}"},
+			"group": "build",
+			"presentation": {
+			"reveal": "always",
+			"panel": "new"
+			}
+		}
+	]
+  }
