@@ -1,0 +1,72 @@
+
+//Standard includes
+#include <windows.h>
+#include <afxres.h>
+
+//Custom includes
+#include "..\include\resource.h"
+#include "..\include\controls.h"
+
+//https://docs.microsoft.com/en-us/windows/win32/menurc/resources
+
+IDI_APPICON ICON "..\\assets\\images\\mainicon.ico" //Window icon
+
+//manifest file
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "..\\Manifest\\ExampleApp.exe.manifest"
+
+IDM_MAINMENU MENU
+BEGIN
+	POPUP "&File"
+	BEGIN
+		MENUITEM "E&xit", IDMI_MAINMENU_FILE_EXIT
+		MENUITEM "&Minimize", IDMI_MAINMENU_FILE_MIN
+	END
+	POPUP "&Authentication"
+	BEGIN
+		MENUITEM "Log &in", IDMI_MAINMENU_AUTH_LOGIN
+		MENUITEM "Log &out", IDMI_MAINMENU_AUTH_LOGOUT
+	END
+	POPUP "M&odeless"
+	BEGIN
+		MENUITEM "&Show", IDMI_MAINMENU_DIALOG_SHOW
+		MENUITEM "&Hide", IDMI_MAINMENU_DIALOG_HIDE
+	END
+	POPUP "&Help"
+	BEGIN
+		MENUITEM "&About", IDMI_MAINMENU_HELP_ABOUT //Model dialog window
+	END
+END
+
+IDD_ABOUT DIALOGEX DISCARDABLE 0, 0, 239, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 8, "MS Sans Serif"
+BEGIN
+	DEFPUSHBUTTON "&OK",IDOK,174,18,50,14
+	PUSHBUTTON "&Cancel",IDCANCEL,174,35,50,14
+	GROUPBOX "About this program...",IDC_STATIC,7,7,225,52
+	CTEXT "An example program showing how to use Win32 API\r\n\r\nby -Construct-",IDC_STATIC,16,18,144,33
+END
+
+IDD_TOOLBAR DIALOGEX 0, 0, 98, 52
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "A modeless dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+	PUSHBUTTON "&Button A",IDC_TOOLBAR_PRESS,7,7,84,14
+	PUSHBUTTON "B&utton B",IDC_TOOLBAR_OTHER,7,31,84,14
+END
+
+IDD_AUTH DIALOGEX 0, 0, 185, 77
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Log in"
+FONT 8, "MS Sans Serif"
+BEGIN
+	CTEXT "User name:", IDC_AUTH_LABEL1, 8, 12, 37, 10
+	CTEXT "Password:", IDC_AUTH_LABEL2, 8, 28, 37, 10
+	EDITTEXT  IDC_AUTH_EDIT1, 50, 9, 121, 14
+	EDITTEXT  IDC_AUTH_EDIT2, 50, 25, 121, 14, ES_PASSWORD 
+	DEFPUSHBUTTON "&Log in",IDC_AUTH_BUTTON1,  65, 54, 50, 14
+	PUSHBUTTON "&Cancel",IDC_AUTH_BUTTON2, 121, 54, 50, 14    
+END
