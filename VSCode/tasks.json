@@ -1,8 +1,26 @@
 {
 	// See https://go.microsoft.com/fwlink/?LinkId=733558
 	// for the documentation about the tasks.json format
+
+	//use vs code plugin Settings Sync to retrive setting onto VS Code
+	//using gist ID: 3529175dc91c6f08bd307233be43ab11
 	"version": "2.0.0",
 	"tasks": [
+		{
+			"label": "Run with make",
+			"type": "shell",
+			"windows": {
+			"command": "make.exe"
+			},
+			"args": ["run"],
+			"options":{"cwd": "${fileWorkspaceFolder}"},
+			"group": "build",
+			"presentation": {
+			"reveal": "silent",
+			"focus": true,
+			"clear": true,
+			}
+		},
 		{
 			"label": "Build with make",
 			"type": "shell",
@@ -13,8 +31,9 @@
 			"options":{"cwd": "${fileWorkspaceFolder}"},
 			"group": "build",
 			"presentation": {
-			"reveal": "always",
-			"panel": "new"
+			"reveal": "silent",
+			"focus": true,
+			"clear": true,
 			}
 		},
 		{
@@ -27,8 +46,9 @@
 			"options":{"cwd": "${fileWorkspaceFolder}"},
 			"group": "build",
 			"presentation": {
-			"reveal": "always",
-			"panel": "new"
+			"reveal": "silent",
+			"focus": true,
+			"clear": true,
 			}
 		},
 		{
@@ -41,8 +61,9 @@
 			"options":{"cwd": "${fileWorkspaceFolder}"},
 			"group": "build",
 			"presentation": {
-			"reveal": "always",
-			"panel": "new"
+			"reveal": "silent",
+			"focus": true,
+			"clear": true,
 			}
 		},
 		{
@@ -55,8 +76,9 @@
 			"options":{"cwd": "${fileWorkspaceFolder}"},
 			"group": "build",
 			"presentation": {
-			"reveal": "always",
-			"panel": "new"
+			"reveal": "silent",
+			"focus": true,
+			"clear": true,
 			}
 		}
 	]

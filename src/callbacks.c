@@ -182,7 +182,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 								
 
 								ghSelectedlist = GlobalAlloc(GPTR, 32);
-								ghSelectedlist = lstrcat(ghSelectedlist, "Are you you want to remove:\r\n\r\n\0");
+								ghSelectedlist = lstrcat(ghSelectedlist, "Are you sure you want to remove:\r\n\r\n\0");
 								cBuff = (LPTSTR) GlobalAlloc(GPTR, 1);								
 
 								for(iListIndex = 0; iListIndex < iSelListItemCount; iListIndex++)
@@ -227,7 +227,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 						SendMessage(hListBox, LB_RESETCONTENT, (WPARAM) 0, (LPARAM) 0);
 						gbFileModified = TRUE;
 						break;
-					//toolbar cases defind in controls.h
+					//toolbar cases defined in controls.h
 					case IDC_MAIN_TOOLBAR_FILE_NEW:
 						{
 							int iListBoxItemCount = SendMessage(hListBox, LB_GETCOUNT , 0, 0);
