@@ -241,9 +241,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 									OPENFILENAME sOpenFileName;
 									char cPathFileToSave[MAX_PATH] = "\0";
 
-									ZeroMemory(&sOpenFileName, sizeof(sOpenFileName));
-
-									
+									ZeroMemory(&sOpenFileName, sizeof(sOpenFileName));									
 
 									sOpenFileName.lStructSize = sizeof(sOpenFileName);
 									sOpenFileName.hwndOwner = hwnd;
